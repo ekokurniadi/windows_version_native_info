@@ -1,0 +1,8 @@
+message("-- Linking Rust")
+set(CRATE_NAME "windows_version_native_info")
+set(CRATE_NAME ${CRATE_NAME} PARENT_SCOPE)
+if(CRATE_STATIC)
+   add_library(${CRATE_NAME} STATIC IMPORTED GLOBAL)
+else()
+   add_library(${CRATE_NAME} SHARED IMPORTED GLOBAL)
+endif()
